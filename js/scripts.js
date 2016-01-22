@@ -1,5 +1,17 @@
-// var playersNumber = parseInt($("input#playersNumber").val(), 10);
+$(function() {
+  $("form#playersNumberInput").submit(function(event) {
+    var playersNumber = $("input#playersNumber").val();
+    myCount(playersNumber);
+    myCountArr.forEach(function(item) {
+    $("#displayResults").append( "<li>" + item + "</li>");
+  });
+    event.preventDefault();
+  });
+});
+
+var playersNumber = [];
 var myCountArr = [];
+
 
 var myCount = function(playersNumber) {
   var start = 0;
@@ -7,26 +19,18 @@ var myCount = function(playersNumber) {
     start+= 1;
     myCountArr.push(start);
   };
-  return(myCountArr);
+  myGame();
 };
 
 
-myCountArr.forEach(function(item, i) {
-    if(item % 3 === 0) {
-      myCountArr[i] = "ping";
-    }else if (item % 5 === 0) {
-      myCountArr[i] = "pong";
-    }else if (item % 5 === 0 && playersNumber % 15 === 0) {
-      myCountArr[i] = "pingpong";
-  };
-  return(myGame);
-});
-
-
-// $(function() {
-//   $("form#playersNumberInput").submit(function(event) {
-//     event.preventDefault();
-//   });
-// });
-//
-// a.forEach(function(item, i) { if (item == 3452) a[i] = 1010; });
+var myGame = function(){
+    myCountArr.forEach(function(item, i) {
+      if(item % 3 === 0) {
+      myCountArr[i] = "ping"
+    } if (item % 5 === 0 && item % 15 !== 0) {
+      myCountArr[i] = "pong"
+    } else if (item % 5 === 0  && item % 15 === 0) {
+      myCountArr[i] = "pingpong"};
+  });
+  return(myCountArr);
+};
