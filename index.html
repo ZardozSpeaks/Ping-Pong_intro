@@ -9,22 +9,29 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <h1>Get ready to play Ping Pong!</h1>
-    <h3>Ping Pong will count up to your number starting from one with the following exceptions:
-      <ol>
-        <li>Numbers divisable by 3 will be replaced with ping</li>
-        <li>Numbers divisable by 5 will be replaced with pong</li>
-        <li>Numbers divisable by 15 will be replaced with pingpong</li>
-      </ol>
-    </h3>
-    <form id="playersNumberInput">
-      <label for="p-number">Please enter an number</label>
-      <input name="p-number" id="playersNumber" type="number">
-      <button type="submit" class="btn btn-default" onclick="myGame()">submit</button>
-    </form>
-    <ul id="displayResults">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>GET READY TO PLAY SOME <br>PING PONG!</h1>
+        <h3>Ping Pong will count up to your number (starting from one) with the following exceptions:
+        <h4>
+          <ol>
+            <li>Numbers divisable by 3 will be replaced with ping</li>
+            <li>Numbers divisable by 5 will be replaced with pong</li>
+            <li>Numbers divisable by 15 will be replaced with pingpong</li>
+          </ol>
+        </h4>
+        </h3>
+      </div>
+      <form id="playersNumberInput">
+        <label class="input_label" for="p-number">Please enter an number</label>
+        <input name="p-number" id="playersNumber" type="number">
+        <button type="submit" class="btn btn-default">submit</button>
+        <button type="reset" id="reset"class="btn btn-default">reset</button>
+      </form>
+      <ul id="displayResults">
 
-    </ul>
+      </ul>
+    </div>
   </body>
   <footer>
   </footer>

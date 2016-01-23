@@ -1,0 +1,16 @@
+h4 {
+  padding-top: 2%;
+}
+
+h4 ol li {
+  padding-top: 1%;
+}
+
+.input_label {
+  padding-right: .4%;
+  font-size: 1.15em;
+}
+
+input {
+  margin-right: .4%;
+}
