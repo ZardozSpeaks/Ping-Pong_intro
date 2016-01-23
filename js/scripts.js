@@ -7,6 +7,11 @@ $(function() {
   });
     event.preventDefault();
   });
+
+  $('button#reset').click(function(){
+   $("#displayResults").empty();
+});
+
 });
 
 var playersNumber = [];
@@ -19,6 +24,7 @@ var myCount = function(playersNumber) {
     start+= 1;
     myCountArr.push(start);
   };
+
   myGame();
 };
 
