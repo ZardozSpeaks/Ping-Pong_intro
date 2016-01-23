@@ -1,16 +1,16 @@
 $(function() {
   $("form#playersNumberInput").submit(function(event) {
-    var playersNumber = $("input#playersNumber").val();
-    myCount(playersNumber);
-    myCountArr.forEach(function(item) {
-    $("#displayResults").append( "<li>" + item + "</li>");
-  });
+      var playersNumber = $("input#playersNumber").val();
+      myCount(playersNumber);
+      myCountArr.forEach(function(item) {
+      $("#displayResults").append( "<li>" + item + "</li>");
+    });
     event.preventDefault();
   });
 
-  $('button#reset').click(function(){
-   $("#displayResults").empty();
-});
+    $('button#reset').click(function(){
+     $("#displayResults").empty();
+  });
 
 });
 
