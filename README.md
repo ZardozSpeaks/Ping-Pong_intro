@@ -1,6 +1,6 @@
 # _Ping Pong Website_
 
-#### _a website demonstrating the use of JavaScript loops, branching, and appending elements to HTML _
+#### _a website demonstrating the use of JavaScript loops, branching, and appending elements to HTML_
 
 #### By _**David Remington**_
 
