@@ -1,42 +1,33 @@
 $(function() {
   $("form#playersNumberInput").submit(function(event) {
-      var playersNumber = $("input#playersNumber").val();
-      myCount(playersNumber);
-      myCountArr.forEach(function(item) {
+    event.preventDefault();
+    var playersNumber = parseInt($("input#playersNumber").val());
+    var myCountArr = myGame(playersNumber);
+    myCountArr.forEach(function(item) {
       $("#displayResults").append( "<li>" + item + "</li>");
     });
-    event.preventDefault();
   });
 
-    $('button#reset').click(function(){
-     $("#displayResults").empty();
+  $('button#reset').click(function(){
+    $("#displayResults").empty();
   });
 
 });
 
-var playersNumber = [];
-var myCountArr = [];
 
-
-var myCount = function(playersNumber) {
-  var start = 0;
-  while (start < playersNumber) {
-    start+= 1;
-    myCountArr.push(start);
-  };
-
-  myGame();
-};
-
-
-var myGame = function(){
-    myCountArr.forEach(function(item, i) {
-      if(item % 3 === 0) {
-      myCountArr[i] = "ping"
-    } if (item % 5 === 0 && item % 15 !== 0) {
-      myCountArr[i] = "pong"
-    } else if (item % 5 === 0  && item % 15 === 0) {
-      myCountArr[i] = "pingpong"};
-  });
+var myGame = function(playersNumber) {
+  var myCountArr = [];
+  var i = 0;
+  for (i = 1; i <= playersNumber; i++) {
+    if(i % 15 === 0) {
+      myCountArr.push("pingpong");
+    } else if(i % 5 === 0) {
+        myCountArr.push("pong");
+      } else if(i % 3 === 0) {
+          myCountArr.push("ping");
+        } else {
+            myCountArr.push(i);
+          }
+  }
   return(myCountArr);
 };
